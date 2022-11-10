@@ -33,20 +33,19 @@ IPAddress subnet(255, 255, 255, 0);// the subnet:
 
 
 //https://thingspeak.com/channels
-unsigned long myChannelNumber = 162304X;
-unsigned long myTalkBackID = 4714X;
-const char * myTalkBackKey = "OSZC0RZD8PZFWLZX";
-const char * myWriteAPIKey = "A3SK4EBBQREXHD1X";
+unsigned long myChannelNumber = 162304x;
+unsigned long myTalkBackID = 4714x;
+const char * myTalkBackKey = "OSZC0RZD8PZFWLxx";
+const char * myWriteAPIKey = "A3SK4EBBQREXHDxx";
 
 
 // Initialize values for ThingSpeak updates
 int number1 = 0;
 int number2 = random(1, 4); //1,2,3
 //int number3 = random(0, 100);
-//int number4 = random(0, 100);
+int number4 = 0;
 int number5 = 0;
 int number6 = 0;
-int number7 = 0;
 
 EthernetClient client;
 
@@ -149,7 +148,9 @@ void loop()
     String postMessage =  String("field1=") + String(number1) +
                           String("&field2=") + String(t) +
                           String("&field3=") + String(h) +
+                          String("&field4=") + String(number4) +
                           String("&field5=") + String(number5) +
+                          String("&field6=") + String(number6) +
                           String("&api_key=") + String(myWriteAPIKey) +
                           String("&talkback_key=") + String(myTalkBackKey);
 
@@ -173,42 +174,42 @@ void loop()
 
         if (newCommand.indexOf("1_ON") != -1) {
           digitalWrite(led1, HIGH);
-          number5 = 1;
+          number4 = 1;
           lcd.setCursor(0, 3);
           lcd.print(F("LED1:Y"));
         }
 
         if (newCommand.indexOf("1_OFF") != -1) {
           digitalWrite(led1, LOW);
-          number5 = 0;
+          number4 = 0;
           lcd.setCursor(0, 3);
           lcd.print(F("LED1:N"));
         }
 
         if (newCommand.indexOf("2_ON") != -1) {
           digitalWrite(led2, HIGH);
-          number6 = 1;
+          number5 = 1;
           lcd.setCursor(7, 3);
           lcd.print(F("LED2:Y"));
         }
 
         if (newCommand.indexOf("2_OFF") != -1) {
           digitalWrite(led2, LOW);
-          number6 = 0;
+          number5 = 0;
           lcd.setCursor(7, 3);
           lcd.print(F("LED2:N"));
         }
 
         if (newCommand.indexOf("3_ON") != -1) {
           digitalWrite(led3, HIGH);
-          number7 = 1;
+          number6 = 1;
           lcd.setCursor(14, 3);
           lcd.print(F("LED3:Y"));
         }
 
         if (newCommand.indexOf("3_OFF") != -1) {
           digitalWrite(led3, LOW);
-          number7 = 0;
+          number6 = 0;
           lcd.setCursor(14, 3);
           lcd.print(F("LED3:N"));
         }
@@ -301,24 +302,24 @@ void httpRequest() {
   Serial.print(F("亂數"));
   Serial.println(number2);
 
-  if (number5 == 0 && number2 == 1) {
+  if (number4 == 0 && number2 == 1) {
     postMessagea = "command_string=1_ON";
   }
-  else if (number5 == 1 && number2 == 1) {
+  else if (number4 == 1 && number2 == 1) {
     postMessagea = "command_string=1_OFF";
   }
 
-  else if (number6 == 0 && number2 == 2) {
+  else if (number5 == 0 && number2 == 2) {
     postMessagea = "command_string=2_ON";
   }
-  else if (number6 == 1 && number2 == 2) {
+  else if (number5 == 1 && number2 == 2) {
     postMessagea = "command_string=2_OFF";
   }
 
-  else if (number7 == 0 && number2 == 3) {
+  else if (number6 == 0 && number2 == 3) {
     postMessagea = "command_string=3_ON";
   }
-  else if (number7 == 1 && number2 == 3) {
+  else if (number6 == 1 && number2 == 3) {
     postMessagea = "command_string=3_OFF";
   }
 
