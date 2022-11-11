@@ -33,10 +33,10 @@ IPAddress subnet(255, 255, 255, 0);// the subnet:
 
 
 //https://thingspeak.com/channels
-unsigned long myChannelNumber = 1623046;
-unsigned long myTalkBackID = 47145;
-const char * myTalkBackKey = "OSZC0RZD8PZFWLZ3";
-const char * myWriteAPIKey = "A3SK4EBBQREXHD19";
+unsigned long myChannelNumber = 162304X;
+unsigned long myTalkBackID = 4714X;
+const char * myTalkBackKey = "OSZC0RZD8PZFWLZX";
+const char * myWriteAPIKey = "A3SK4EBBQREXHD1X";
 
 
 // Initialize values for ThingSpeak updates
