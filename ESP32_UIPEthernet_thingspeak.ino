@@ -3,15 +3,15 @@
 //增加RAM https://andrologiciels.wordpress.com/arduino/electronique/ram/
 
 //http://coolaf.com/  增加TalkBack 命令
-//http://api.thingspeak.com/talkbacks/47145/commands.json?api_key=OSZC0RZD8PZFWLZ3
+//http://api.thingspeak.com/talkbacks/4714X/commands.json?api_key=OSZC0RZD8PZFWLZX
 //command_string=TURN_ON
 
 //更新頻道並執行下一個 TalkBack 命令
 //http://api.thingspeak.com/update
-//field1=4&field2=61&field3=35&field4=31&field5=0&api_key=A3SK4EBBQREXHD19&talkback_key=OSZC0RZD8PZFWLZ3
+//field1=4&field2=61&field3=35&field4=31&field5=0&api_key=A3SK4EBBQREXHD1X&talkback_key=OSZC0RZD8PZFWLZX
 
 //列出所有 TalkBack 命令查看
-//https://api.thingspeak.com/talkbacks/47145/commands.json?api_key=OSZC0RZD8PZFWLZ3
+//https://api.thingspeak.com/talkbacks/4714X/commands.json?api_key=OSZC0RZD8PZFWLZX
 
 
 //#include <avr/pgmspace.h>
